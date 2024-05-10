@@ -1,0 +1,36 @@
+.list {
+  --column: 4;
+  --spacing: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--spacing);
+  margin-left: calc(-1 * var(--spacing));
+}
+.list > * {
+  width: calc(100% / var(--column) - var(--spacing));
+  margin-left: var(--spacing);
+}
+.list .item {
+  background: olivedrab;
+  font-size: 20px;
+  font-font-weight: 600;
+}
+
+.new-list {
+  --column: 2;
+  --spacing: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--spacing);
+  margin-left: calc(-1 * var(--spacing));
+  margin-top: 20px;
+}
+.new-list > * {
+  width: calc(100% / var(--column) - var(--spacing));
+  margin-left: var(--spacing);
+}
+.new-list .new-item {
+  background: orange;
+}
+
+/*# sourceMappingURL=styles.css.map */

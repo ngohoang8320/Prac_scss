@@ -1,0 +1,9 @@
+// @use "../base/variable" as vari;
+@use "../base" as *;
+
+.header {
+    height:
+        /* base. */
+        $header-height;
+    background-color: orange;
+}

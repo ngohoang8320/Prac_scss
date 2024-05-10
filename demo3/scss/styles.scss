@@ -1,0 +1,140 @@
+@mixin position($pos) {
+    @if $pos ==top-left {
+        top: 0;
+        left: 0;
+    }
+
+    @if $pos ==top-right {
+        top: 0;
+        right: 0;
+    }
+
+    @if $pos ==bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+    @if $pos ==bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+
+    @if $pos ==center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.container {
+    position: relative;
+    height: 400px;
+    background: #ccc;
+
+    .item {
+        @include position(center);
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: olivedrab;
+    }
+}
+
+@mixin grid($column, $spacing) {
+    --column: #{$column};
+    --spacing: #{$spacing};
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--spacing);
+    margin-left: calc(-1 * var(--spacing));
+
+    >* {
+        width: calc(100% / var(--column) - var(--spacing));
+        margin-left: var(--spacing);
+    }
+}
+
+//VD 2
+/* .list {
+    @include grid(4, 30px);
+
+    @media (max-width: 991.98px) {
+        --column: 2;
+        --spacing: 20px;
+        // @include grid(2, 20px);
+    }
+
+    @media (max-width: 575.98px) {
+        --column: 1;
+        --spacing: 10px;
+    }
+
+    .item {
+        background: olivedrab;
+
+        font: {
+            size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
+.new-list {
+    @include grid(2, 20px);
+
+    margin-top: 20px;
+
+    .new-item {
+        background: orange;
+    }
+} */
+
+//VD 3
+@mixin screen($device) {
+    @if $device ==tablet {
+        @media (max-width: 991.98px) {
+            @content;
+        }
+    }
+
+    @if $device ==mobile {
+        @media (max-width: 557.98px) {
+            @content;
+        }
+    }
+}
+
+.list {
+    @include grid(4, 30px);
+
+    @include screen(tablet) {
+        --column: 2;
+        --spacing: 20px;
+    }
+
+    @include screen(mobile) {
+        --column: 1;
+        --spacing: 10px;
+    }
+
+    .item {
+        background: olivedrab;
+
+        font: {
+            size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
+.new-list {
+    @include grid(2, 20px);
+
+    margin-top: 20px;
+
+    .new-item {
+        background: orange;
+    }
+}
