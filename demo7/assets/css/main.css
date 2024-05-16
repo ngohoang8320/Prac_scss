@@ -1,0 +1,17 @@
+/* @if 10==15 {
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+} */
+/* @debug (1 2 3)==(1 2 3);
+@debug (1 2 3)==(3 2 1); */
+/* @debug 12px % 2;
+@debug 12px % 5; */
+.container {
+  width: 100px;
+  margin-top: 10px;
+  display: flex;
+}
+
+/*# sourceMappingURL=main.css.map */

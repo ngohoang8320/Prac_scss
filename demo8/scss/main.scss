@@ -1,0 +1,60 @@
+$condition: true;
+
+//@if @else
+// h1 {
+// @if $condition {
+//     color: red;
+// }
+
+// @else {
+//     color: green;
+// }
+
+// color: if($condition, red, green);
+// }
+
+//@each
+// $break-points: (578px 768px 991px 1140px 1320px);
+
+// @each $break-point in $break-points {
+//     // @debug $break-point;
+
+//     @media(min-width: #{$break-point}) {
+//         .test {
+//             color: red;
+//         }
+//     }
+// }
+
+
+// $break-points: (
+//     "sm": 578px,
+//     "md": 768px,
+//     "lg": 991px,
+//     "xl": 1140px,
+//     "xxl": 1320px
+// );
+
+
+// @each $key, $break-point in $break-points {
+//     @media(min-width: #{$break-point}) {
+//         .col-#{$key} {
+//             width: 100px;
+//         }
+//     }
+// }
+
+
+// @for $i from 1 to 10 {
+//     @debug $i;
+// }
+
+// @for $i from 1 through 10 {
+//     @debug $i;
+// }
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        --column-number: #{$i};
+    }
+}

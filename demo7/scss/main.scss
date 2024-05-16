@@ -1,0 +1,42 @@
+// 1. Equality (==, !=)
+// 2. Relation (<, >, <=, >=)
+// 3. Numeric (+, -, *, /, %)
+// 4. Logic (not, and, or)
+// 5. Interpolation
+
+// Truthy & Falsy : flase, null
+
+
+@use "sass:math";
+
+/* @if 10==15 {
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+} */
+
+/* @debug (1 2 3)==(1 2 3);
+@debug (1 2 3)==(3 2 1); */
+
+
+// @debug math.div(12px, 3);
+
+/* @debug 12px % 2;
+@debug 12px % 5; */
+
+// @debug not 0
+
+// $name: "Nguyen Van A";
+
+// @debug "Xin chao: #{$name}";
+
+$selector: ".container";
+$property: "display";
+$placement: "top";
+
+#{$selector} {
+    width: 100px;
+    margin-#{$placement}: 10px;
+    #{$property}: flex;
+}

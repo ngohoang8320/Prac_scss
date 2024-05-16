@@ -1,0 +1,71 @@
+// Numbers
+$font-size: 20px;
+$padding: 2rem;
+$order: 2;
+$z-index: 99;
+
+// Strings
+$device: "mobile";
+$font-code: "monospace";
+
+// Colors
+$color1: green;
+$color2: #000005;
+
+$primary: blue;
+$secondary: rgba($color: $primary, $alpha: 0.5);
+
+h1 {
+    color: $primary;
+}
+
+h2 {
+    color: $secondary;
+}
+
+// @debug $secondary
+
+
+// Lists
+$colors: red green blue orange;
+// $colors: red,green,blue,orange;
+$break-points: 575px 768px 991px;
+$fond-weights: 400 500 600;
+
+// Maps
+$break-points: (
+    "mobile": 575px,
+    "table": 768px,
+    "deskop": 991px
+);
+// @debug $break-points;
+
+// Boolean
+$success: true;
+$error: false;
+
+@mixin avatar ($w, $h, $isCircle: false) {
+    width: $w;
+    height: $h;
+
+    @if $isCircle ==true {
+        border-radius: 50%;
+    }
+
+}
+
+img.avatar {
+    @include avatar(100px, 100px, $isCircle: true);
+}
+
+// Null
+@mixin flexCenter($horizontal: center, $vertical: center) {
+    display: flex;
+    align-items: $horizontal;
+    justify-content: $vertical;
+}
+
+.box {
+    @include flexCenter($vertical: null);
+
+}
